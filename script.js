@@ -523,11 +523,101 @@ let bun = document.getElementById('bun');
 let slicea = document.getElementById('slicea')
 let sliceb = document.getElementById('sliceb')
 
+let Open = false;
+
 bun.addEventListener('click' , () => {
-  bun.classList.toggle('aft')
-  navbar.classList.toggle('darkNavbar')
-  pg1.classList.toggle('page_one_show')
-  pg2.classList.toggle('page_two_show')
-  mode.classList.toggle('modeswitch_dark')
-  logo.classList.toggle('logo_dark')
+
+  if (!Open) { 
+    bun.classList.toggle('aft')
+    pg1.classList.toggle('page_one_show')
+    pg2.classList.toggle('page_two_show')
+    // mode.classList.toggle('modeswitch_dark')
+    logo.classList.toggle('logo_dark')
+  
+    navbar.style.backgroundColor = 'rgba(0 , 0 , 0 , 0)';
+    document.documentElement.style.setProperty('--navTcolor' ,'#fff')
+    
+    Open = true;
+  }
+  else{
+    bun.classList.toggle('aft')
+    pg1.classList.toggle('page_one_show')
+    pg2.classList.toggle('page_two_show')
+    mode.classList.toggle('modeswitch_dark')
+    logo.classList.toggle('logo_dark')
+    document.documentElement.style.setProperty('--nightColor' , '#1c1c1c')
+
+    Open =false;
+  }
+})
+
+
+// SWITCHING BETWEEN DARK AND LIGHT MODE
+
+let switchBackground = document.querySelector('.black_bg_container')
+
+let defaultMode = 1;
+
+let modeName = document= document.getElementById('modename');
+
+modeName.addEventListener('click' , () => {
+  if (defaultMode === 1) {
+    modeName.innerHTML = 'Night Mode';
+
+    document.documentElement.style.setProperty('--nightColor' , '#fff')
+    document.documentElement.style.setProperty('--dayColor' ,'#1c1c1c')
+
+    document.documentElement.style.setProperty('--pureWhite' , 'rgb(0 , 0 , 0)')
+    document.documentElement.style.setProperty('--pureBlack' , 'rgb(255 , 255 , 255)')
+
+    document.documentElement.style.setProperty('--underlineLight' , 'rgba(0 , 0 , 0, 0.3)')
+    document.documentElement.style.setProperty('--underlineGlow' , 'rgba(0 , 0 , 0 , 0.9)')
+    
+    document.documentElement.style.setProperty('--AcolorLight' , '#fff')
+    document.documentElement.style.setProperty('--Acolordark' ,'#1c1c1c')
+    
+    document.documentElement.style.setProperty('--navColor' ,'#fff')
+    document.documentElement.style.setProperty('--navTcolor' ,'#1c1c1c')
+    
+    defaultMode = 0;
+  } else {
+    modeName.innerHTML = 'Light Mode';
+    
+    document.documentElement.style.setProperty('--nightColor' , '#1c1c1c')
+    document.documentElement.style.setProperty('--dayColor' , '#fff')
+    
+    document.documentElement.style.setProperty('--pureBlack' , 'rgba(0 , 0 , 0)')
+    document.documentElement.style.setProperty('--pureWhite' , 'rgba(255 , 255 , 255)')
+    
+    document.documentElement.style.setProperty('--underlineLight' , 'rgba(255 , 255 , 255 , 0.3)')
+    document.documentElement.style.setProperty('--underlineGlow' , 'rgba(255 , 255 , 255 , 0.9)')
+    
+    document.documentElement.style.setProperty('--AcolorLight' , '#1c1c1c')
+    document.documentElement.style.setProperty('--Acolordark' ,'#fff')
+    
+    document.documentElement.style.setProperty('--navColor' ,'#1c1c1c')
+    document.documentElement.style.setProperty('--navTcolor' ,'#fff')
+    
+    defaultMode = 1;
+  }
+  
+})
+
+//  SHOW NAVBAR AT SET HEIGHT
+
+let setHeight = 720;
+
+window.addEventListener('scroll' , (e) => {
+  let currentHeight = window.scrollY; 
+  if (currentHeight >= setHeight) {
+    navbar.style.display = 'grid';
+    mode.style.opacity = 1;
+    mode.style.display = 'flex';
+  } else if (currentHeight === 0) {
+    navbar.style.display = 'grid';
+    mode.style.opacity = 0;
+  } else{
+    navbar.style.display = 'none';
+    mode.style.opacity = 0;
+  }
 })
