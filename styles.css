@@ -5,6 +5,23 @@
   cursor: grab;
 }
 
+:root {
+  --nightColor: #1c1c1c;
+  --dayColor: #fff;
+
+  --pureBlack: rgb(0 , 0 , 0);
+  --pureWhite: rgb(255 , 255 , 255);
+
+  --underlineLight : rgba(255 , 255 , 255 , 0.3);
+  --underlineGlow : rgba(255 , 255 , 255 , 1);
+
+  --Acolorlight : rgb(0 , 0 , 0);
+  --Acolordark : rgb(255 , 255 , 255);
+
+  --navColor: #1c1c1c;
+  --navTcolor: #fff;
+}
+
 body{
   overflow-x: hidden;
   cursor: grab;
@@ -15,31 +32,28 @@ body{
 .navbar{
   z-index: 999;
   position: fixed;
-
+  
   height: 40px;
   width: 100vw;
 
   display: grid;
   grid-template-columns: 5fr 3fr 2fr 2fr 1fr 1fr;
   align-items: center;
-  color: #fff;
+  color: var(--pureWhite);
 
-  background-color: #1c1c1c;
+  background-color: var(--nightColor);
 
-  font-family: "Neue Montreal", sans-serif;
-}
-
-.darkNavbar{
-  background-color: transparent;
+  font-family: "Neue Montreal", 'sans-serif';
 }
 
 .pplogo{
   font-size: 0.9rem;
-  color: #fff;
+  color: var(--pureWhite);
   margin: 0 0 0 6%;
   display: flex;
   align-items: flex-start;
   font-weight: 500;
+  font-family: "Neue Montreal", 'sans-serif';
 }
 
 .logo_dark{
@@ -50,6 +64,7 @@ body{
   display: flex;
   align-items: center;
   padding:  0 0 0 30px;
+  font-family: "Neue Montreal", 'sans-serif';
 }
 .modeswitch span{
   font-size: 1.5rem;
@@ -74,6 +89,9 @@ body{
 /* HAMBURGER STYLING */
 
 #bun{
+  position: relative;
+  z-index: 00;
+
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -86,7 +104,7 @@ body{
   height: 2px;
   width: 29px;
 
-  background-color: #fff;
+  background-color: var(--navTcolor);
   transition-timing-function: ease;
 }
 
@@ -126,6 +144,8 @@ body{
   background-color: #fff;
 
   overflow: hidden;
+
+  box-shadow: 0 1px 10px rgba(0 , 0 , 0 , 0.5);
 }
 .page_one_show{
   height: 90vh;
@@ -133,6 +153,7 @@ body{
   transition-duration: 500ms;
   transition-timing-function: 
   ease;
+  position: fixed;
 }
 
 .bigtext{
@@ -183,6 +204,8 @@ body{
   /* transition-property: height; */
   transition-duration: 600ms;
   transition-timing-function: ease-in-out;
+
+  position: fixed;
 }
 
 
@@ -213,7 +236,6 @@ body{
 #listnav ul li{
   margin: 5px 0 5px 0;
 }
-
 
 #fl{
   grid-area: 2 / 1 / 3 / 2;
@@ -295,8 +317,7 @@ body{
   width: 100vw;
   height: 850vh;
 
-  /* background-color: #fff; */
-  background-color: #1c1c1c;
+  background-color: var(--nightColor);
 
   overflow: hidden;
 }
@@ -308,7 +329,7 @@ body{
   width: 100%;
   height: 100vh;
 
-  font-family: brut, "Neue Montreal";
+  font-family: 'brut', "Neue Montreal";
 }
 
 #circle_box{
@@ -330,7 +351,7 @@ body{
   height: 15px;
   width: 15px;
 
-  border: 1px solid white;
+  border: 1px solid var(--dayColor);
   border-radius: 100%;
 
   margin: 0 10px 0 10px;
@@ -422,6 +443,7 @@ body{
 
   display: flex;
   flex-direction: column;
+
 }
 .off{
   height: 50%;
@@ -435,9 +457,11 @@ body{
 }
 #off_box_a_1{
   font-size: 2.5rem;
+  color: #fff;
 }
 #off_box_a_2{
   display: flex;
+  color: #fff;
 }
 .right_arrow_icon{
   height: 100%;
@@ -459,6 +483,7 @@ body{
 
   display: none;
   flex-direction: column;
+  color: #fff;
 }
 
 .s2_td{
@@ -512,6 +537,7 @@ body{
 
   display: flex;
   flex-direction: column;
+  color: #fff;
 }
 .off{
   height: 50%;
@@ -525,19 +551,21 @@ body{
 }
 #off_box_b_1{
   font-size: 2.5rem;
+  color: #fff;
 }
 #off_box_b_2{
   display: flex;
+  color: #fff;
 }
 .right_arrow_icon{
   height: 100%;
   width: 30%;
-  color: #fff;
 
   display: flex;
   align-items: center;
   justify-content: right;
   font-size: 40px;
+  color: #fff;
 }
 
 /* THIRD SLIDE */
@@ -607,14 +635,16 @@ body{
   align-items: center;
   justify-content: center;
 
-  color: #fff;
+  color: var(--dayColor);
   font-style: italic;
 }
 #off_box_c_1{
   font-size: 2.5rem;
+  color: #fff;
 }
 #off_box_c_2{
   display: flex;
+  color: #fff;
 }
 .right_arrow_icon{
   height: 100%;
@@ -692,19 +722,21 @@ body{
   align-items: center;
   justify-content: center;
 
-  color: #fff;
+  color: var(--dayColor);
   font-style: italic;
 }
 #off_box_d_1{
   font-size: 2.5rem;
+  color: #fff;
 }
 #off_box_d_2{
   display: flex;
+  color: #fff;
 }
 .right_arrow_icon{
   height: 100%;
   width: 30%;
-  color: #fff;
+  color: var(--dayColor);
 
   display: flex;
   align-items: center;
@@ -730,7 +762,7 @@ body{
   font-size: 12.5rem;
   font-weight: 400;
 
-  color: #fff;
+  color: var(--dayColor);
 }
 #s5_td1{
   width: 50%;
@@ -777,14 +809,16 @@ body{
   align-items: center;
   justify-content: center;
 
-  color: #fff;
+  color: var(--dayColor);
   font-style: italic;
 }
 #off_box_e_1{
   font-size: 2.5rem;
+  color: #fff;
 }
 #off_box_e_2{
   display: flex;
+  color: #fff;
 }
 .right_arrow_icon{
   height: 100%;
@@ -824,7 +858,7 @@ body{
   width: 100%;
   height: 120vh;
 
-  color: #fff;
+  color: var(--dayColor);
 }
 
 .sub_2_a{
@@ -879,6 +913,7 @@ body{
 
 .sub_2_c p{
   margin: 40px 10vw 40px 0;
+  font-family: "Neue Montreal", 'sans-serif';
 }
 
 .sub_2_d{
@@ -913,14 +948,14 @@ body{
   position: absolute;
 
   top: 60px;
-  background-color: rgba(255 , 255 , 255 , 0.3);
+  background-color: var(--underlineLight);
 
   transition-duration: 500ms;
   transition-timing-function: ease;
 }
 
 #two_link_a:hover:after{
-  background-color: rgba(255 , 255 , 255 , 1);
+  background-color: var(--underlineGlow)
 }
 
 #two_link_b{
@@ -935,7 +970,7 @@ body{
   position: absolute;
 
   top: 60px;
-  background-color: rgba(255 , 255 , 255 , 0.3);
+  background-color: var(--underlineLight);
 
   
   transition-duration: 500ms;
@@ -943,7 +978,7 @@ body{
 }
 
 #two_link_b:hover:after{
-  background-color: rgba(255 , 255 , 255 , 1);
+  background-color: var(--underlineGlow);
 }
 
 .sub_2_e{
@@ -998,7 +1033,7 @@ body{
 #fix{
   display: none;
   z-index: 1;
-  background-color: #1c1c1c;
+  background-color: var(--nightColor);
   height: 100vh;
   width: 100vw;
 
@@ -1013,7 +1048,7 @@ body{
   width:  90%;
   background-color: transparent;
 
-  border: 1px solid white;
+  border: 1px solid var(--dayColor);
   border-radius: 2.5%;
 
   margin: 10px 0 10px 0;
@@ -1055,7 +1090,7 @@ body{
 
   width: 100vw;
   height: 100vh;
-  background-color: #1c1c1c;
+  background-color: var(--nightColor);
 
   z-index: 100;
 }
@@ -1070,7 +1105,7 @@ body{
 }
 
 .bigA{
-  color: #fff;
+  color: var(--Acolordark);
   font-size: 7rem;
   font-style: italic;
 }
@@ -1085,10 +1120,11 @@ body{
 
   text-align: center;
 
-  color: #fff;
+  color: var(--dayColor);
 }
 .ribbon p{
   padding-left: 30px;
+  color: white;
 }
 
 .card_down{
@@ -1097,12 +1133,14 @@ body{
 
   height: 30%;
   width: 100%;
-  color: #fff;
+  font-size: 1.1rem;
+  color: var(--dayColor);
 }
 
 .down_left{
   display: flex;
   align-items: center;
+  color: var(--dayColor);
 }
 
 .down_right{
@@ -1118,7 +1156,7 @@ body{
   width: 350px;
   border-radius: 100%;
 
-  background-color: #fff;
+  background-color: var(--dayColor);
 
   display: flex;
   flex-direction: column;
@@ -1174,7 +1212,7 @@ body{
 
   margin: 10vh 0 -10vh 0;
 
-  color: #fff;
+  color: var(--dayColor);
 }
 
 .all_fonts_link::after{
@@ -1183,7 +1221,7 @@ body{
   height: 2px;
   width: 40%;
   top: 60px;
-  background-color: rgba(255 , 255 , 255 , 0.3);
+  background-color: var(--underlineLight);
 
   transition-property: width;
   transition-duration: 1s;
@@ -1192,7 +1230,7 @@ body{
 
 .all_fonts_link:hover::after{
   content: '';
-  background-color: rgba(255 , 255 , 255 , 1);;
+  background-color: var(--underlineGlow);
 }
 
 
@@ -1234,7 +1272,7 @@ body{
   font-family: Neue Montreal ,sans-serif;
   text-align: right;
   font-size: 2.5rem;
-  color: #fff;
+  color: var(--dayColor);
 
   margin: 5vh 200px 0 35%;
   line-height: 40px;
@@ -1298,7 +1336,7 @@ body{
 
   height: 10%;
   width: 100%;
-  color: #fff;
+  color: var(--dayColor);
 }
 
 #cantini{
@@ -1355,7 +1393,7 @@ body{
   height: 10%;
   width: 100%;
 
-  color: #fff;
+  color: var(--dayColor);
 }
 
 #litera{
@@ -1425,7 +1463,7 @@ body{
 #brandinga ,
 #brandingb ,
 #print{
-  color: #fff;
+  color: var(--dayColor);
   opacity: 0.5;
 
   font-size: 1.1rem;
@@ -1459,7 +1497,7 @@ body{
 #sub_f_3_b_txt ,
 #sub_f_3_c_txt{
   display: flex;
-  color: #fff;
+  color: var(--dayColor);
 }
 
 .sub_four4{
@@ -1474,7 +1512,7 @@ body{
   align-items: center;
   justify-content: center;
 
-  color: #fff;
+  color: var(--dayColor);
 }
 
 .s_5_a_img::-webkit-scrollbar ,
@@ -1552,11 +1590,11 @@ body{
 
   transition-duration: 500ms;
   transition-timing-function: ease;
-  background-color: rgba(255 , 255 , 255 , 0.3);
+  background-color: var(--underlineLight);
 }
 
 .sub_four4:hover:after{
-  background-color: rgba(255 , 255 , 255 , 1);
+  background-color: var(--underlineGlow);
 }
 
 .txt_arr_sub_f{
@@ -1612,8 +1650,25 @@ body{
   width: 100%;
   height: 25%;
 
-  color: #fff;
+  color: var(--dayColor);
   margin-top: 150px;
+}
+
+
+#basics ,
+#Educationa ,
+#Educationb{
+  color: var(--underlineLight);
+  font-size: 1.03rem;
+  font-family: "Neue Montreal", sans-serif;
+}
+
+#Creative ,
+#part1 ,
+#porttf{
+  margin: 40px 0 0 0;
+  font-size: 2rem;
+  font-family: "Neue Montreal", sans-serif;
 }
 
 .s_5_b_txt{
@@ -1622,9 +1677,9 @@ body{
   height: 20%;
 
 
-  color: #fff;
+  color: var(--dayColor);
   margin-top: 150px;
-  color: #fff;
+  color: var(--dayColor);
 }
 
 .sub_four6{
@@ -1637,7 +1692,7 @@ body{
   align-items: center;
   justify-content: center;
 
-  color: #fff;
+  color: var(--dayColor);
 
   margin-top: 150px;
   text-align: center;
@@ -1654,7 +1709,7 @@ body{
   top: 60%;
   width: 40%;
   height: 1px; /* Adjust as needed */
-  background-color: #fff; /* Adjust color as needed */
+  background-color: var(--dayColor); /* Adjust color as needed */
   transition: width 0.3s ease;
 }
 
@@ -1663,19 +1718,19 @@ body{
   transition-timing-function: ease-in;
   width: 40%;
   transform-origin: left;
-  background-color: #fff;
+  background-color: var(--dayColor);
 }
 
 .txt_sub_s{
   margin: 0 12rem 0 0;
 }
 .txt_sub_s p{
-  color: #fff;
+  color: var(--dayColor);
 }
 
 .txt_arr_sub_s{
   margin: 0 0 0 12rem;
-  color: #fff;
+  color: var(--dayColor);
 }
 
 /* THE STYLING OF BLACK BG CONTAINER ENDS HERE */
@@ -1702,7 +1757,7 @@ body{
   justify-content: space-between;
   align-items: baseline;
 
-  font-family: Neue Montreal, 'sans-serif';
+  font-family: "Neue Montreal", sans-serif;
 }
 
 .white_above_a_1{
@@ -1740,7 +1795,7 @@ body{
 }
 
 .email:hover::after{
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 
@@ -1847,6 +1902,7 @@ body{
   width: 20vw;
 
   font-size: 10rem;
+  font-style: italic;
 }
 
 
@@ -1881,7 +1937,7 @@ td{
   width: 30vw;
   height: 27px;
 
-  /* font-family: "Neue Montreal", sans-serif; */
+  font-family: "Neue Montreal", sans-serif;
   font-weight: 0;
 }
 td:hover{
@@ -1912,7 +1968,7 @@ td:hover{
   height: 25px;
   width: 60px;
 
-  background-color: #fff;
+  background-color: var(--dayColor);
 }
 
 #mastercard{
