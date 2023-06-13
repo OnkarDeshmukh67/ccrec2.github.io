@@ -621,3 +621,41 @@ window.addEventListener('scroll' , (e) => {
     mode.style.opacity = 0;
   }
 })
+
+// SMALL ANIMATIONS
+
+let boxA = document.getElementById('off_type_box_a')
+let boxB = document.getElementById('off_type_box_b')
+let boxC = document.getElementById('off_type_box_c')
+let boxD = document.getElementById('off_type_box_d')
+let boxE = document.getElementById('off_type_box_e')
+
+let arrows = document.querySelectorAll('.right_arrow_icon')
+
+let boxArray = [];
+boxArray.push(boxA)
+boxArray.push(boxB)
+boxArray.push(boxC)
+boxArray.push(boxD)
+boxArray.push(boxE)
+
+boxArray.forEach( el => {
+  el.style.borderColor = 'rgba(255 , 255 , 255 , 0.7)';
+
+  el.addEventListener('mouseenter' , () => {
+    el.style.borderColor = 'rgba(255 , 255 , 255 , 1)';
+
+    arrows.forEach(elem => {
+      elem.style.transform = 'translateX(5px)';
+    });
+
+  })
+  el.addEventListener('mouseleave' , () => {
+    el.style.borderColor = 'rgba(255 , 255 , 255 , 0.7)';
+
+    arrows.forEach(elem => {
+      elem.style.transform = 'translateX(0)';
+    });
+
+  })
+})
